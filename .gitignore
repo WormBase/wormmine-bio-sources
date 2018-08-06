@@ -941,3 +941,4 @@ jar
 /entrez-organism/build/resources/main/genomic_model.xml
 /entrez-organism/build/tmp/expandedArchives/bio-model-2.0.0-RC-01.jar_as5f85rwamo7q1w9yhh6nioqg/genomic_model.xml
 /entrez-organism/build/tmp/jar/MANIFEST.MF
+/anatomy_term/build/tmp
