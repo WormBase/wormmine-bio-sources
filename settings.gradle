@@ -1,0 +1,99 @@
+rootProject.name = 'bio-sources'
+include ':bio-source-anat-annotation'
+project(':bio-source-anat-annotation').projectDir = new File(settingsDir, './anat-annotation')
+include ':bio-source-anatomy_ontology'
+project(':bio-source-anatomy_ontology').projectDir = new File(settingsDir, './anatomy_ontology')
+include ':bio-source-anatomy_term'
+project(':bio-source-anatomy_term').projectDir = new File(settingsDir, './anatomy_term')
+include ':bio-source-biogrid'
+project(':bio-source-biogrid').projectDir = new File(settingsDir, './biogrid')
+include ':bio-source-chado-db'
+project(':bio-source-chado-db').projectDir = new File(settingsDir, './chado-db')
+include ':bio-source-ensembl'
+project(':bio-source-ensembl').projectDir = new File(settingsDir, './ensembl')
+include ':bio-source-entrez-organism'
+project(':bio-source-entrez-organism').projectDir = new File(settingsDir, './entrez-organism')
+include ':bio-source-example-sources'
+project(':bio-source-example-sources').projectDir = new File(settingsDir, './example-sources')
+include ':bio-source-fasta'
+project(':bio-source-fasta').projectDir = new File(settingsDir, './fasta')
+include ':bio-source-fly'
+project(':bio-source-fly').projectDir = new File(settingsDir, './fly')
+include ':bio-source-gff'
+project(':bio-source-gff').projectDir = new File(settingsDir, './gff')
+include ':bio-source-go-annotation'
+project(':bio-source-go-annotation').projectDir = new File(settingsDir, './go-annotation')
+include ':bio-source-go'
+project(':bio-source-go').projectDir = new File(settingsDir, './go')
+include ':bio-source-homologene'
+project(':bio-source-homologene').projectDir = new File(settingsDir, './homologene')
+include ':bio-source-human'
+project(':bio-source-human').projectDir = new File(settingsDir, './human')
+include ':bio-source-identifiers'
+project(':bio-source-identifiers').projectDir = new File(settingsDir, './identifiers')
+include ':bio-source-intermine-items-large-xml-file'
+project(':bio-source-intermine-items-large-xml-file').projectDir = new File(settingsDir, './intermine-items-large-xml-file')
+include ':bio-source-intermine-items-xml-file'
+project(':bio-source-intermine-items-xml-file').projectDir = new File(settingsDir, './intermine-items-xml-file')
+include ':bio-source-interpro-go'
+project(':bio-source-interpro-go').projectDir = new File(settingsDir, './interpro-go')
+include ':bio-source-interpro'
+project(':bio-source-interpro').projectDir = new File(settingsDir, './interpro')
+include ':bio-source-kegg-orthologues'
+project(':bio-source-kegg-orthologues').projectDir = new File(settingsDir, './kegg-orthologues')
+include ':bio-source-kegg-pathway'
+project(':bio-source-kegg-pathway').projectDir = new File(settingsDir, './kegg-pathway')
+include ':bio-source-mammalian-phenotype-ontology'
+project(':bio-source-mammalian-phenotype-ontology').projectDir = new File(settingsDir, './mammalian-phenotype-ontology')
+include ':bio-source-modmine'
+project(':bio-source-modmine').projectDir = new File(settingsDir, './modmine')
+include ':bio-source-mosquito'
+project(':bio-source-mosquito').projectDir = new File(settingsDir, './mosquito')
+include ':bio-source-mouse'
+project(':bio-source-mouse').projectDir = new File(settingsDir, './mouse')
+include ':bio-source-ncbi-gff'
+project(':bio-source-ncbi-gff').projectDir = new File(settingsDir, './ncbi-gff')
+include ':bio-source-orthodb'
+project(':bio-source-orthodb').projectDir = new File(settingsDir, './orthodb')
+include ':bio-source-panther'
+project(':bio-source-panther').projectDir = new File(settingsDir, './panther')
+include ':bio-source-pdb'
+project(':bio-source-pdb').projectDir = new File(settingsDir, './pdb')
+include ':bio-source-protein2ipr'
+project(':bio-source-protein2ipr').projectDir = new File(settingsDir, './protein2ipr')
+include ':bio-source-psi-complexes'
+project(':bio-source-psi-complexes').projectDir = new File(settingsDir, './psi-complexes')
+include ':bio-source-psi-mi-ontology'
+project(':bio-source-psi-mi-ontology').projectDir = new File(settingsDir, './psi-mi-ontology')
+include ':bio-source-psi'
+project(':bio-source-psi').projectDir = new File(settingsDir, './psi')
+include ':bio-source-pubmed-gene'
+project(':bio-source-pubmed-gene').projectDir = new File(settingsDir, './pubmed-gene')
+include ':bio-source-reactome'
+project(':bio-source-reactome').projectDir = new File(settingsDir, './reactome')
+include ':bio-source-retired'
+project(':bio-source-retired').projectDir = new File(settingsDir, './retired')
+include ':bio-source-so'
+project(':bio-source-so').projectDir = new File(settingsDir, './so')
+include ':bio-source-treefam'
+project(':bio-source-treefam').projectDir = new File(settingsDir, './treefam')
+include ':bio-source-uberon'
+project(':bio-source-uberon').projectDir = new File(settingsDir, './uberon')
+include ':bio-source-uniprot-keywords'
+project(':bio-source-uniprot-keywords').projectDir = new File(settingsDir, './uniprot-keywords')
+include ':bio-source-uniprot'
+project(':bio-source-uniprot').projectDir = new File(settingsDir, './uniprot')
+include ':bio-source-update-data-sources'
+project(':bio-source-update-data-sources').projectDir = new File(settingsDir, './update-data-sources')
+include ':bio-source-update-publications'
+project(':bio-source-update-publications').projectDir = new File(settingsDir, './update-publications')
+include ':bio-source-vcf'
+project(':bio-source-vcf').projectDir = new File(settingsDir, './vcf')
+include ':bio-source-worm'
+project(':bio-source-worm').projectDir = new File(settingsDir, './worm')
+include ':bio-source-wormbase-acedb'
+project(':bio-source-wormbase-acedb').projectDir = new File(settingsDir, './wormbase-acedb')
+include ':bio-source-wormbase-gff'
+project(':bio-source-wormbase-gff').projectDir = new File(settingsDir, './wormbase-gff')
+include ':bio-source-wormbase-gff3-core'
+project(':bio-source-wormbase-gff3-core').projectDir = new File(settingsDir, './wormbase-gff3-core')
