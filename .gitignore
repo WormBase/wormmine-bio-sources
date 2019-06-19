@@ -945,3 +945,4 @@ jar
 /anatomy_term/build/tmp
 /intermine.log
 */build/*/
+phenotype_ontology/build/*
