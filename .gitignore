@@ -944,3 +944,4 @@ jar
 /entrez-organism/build/tmp/jar/MANIFEST.MF
 /anatomy_term/build/tmp
 /intermine.log
+*/build/*/
