@@ -946,3 +946,4 @@ jar
 /intermine.log
 */build/*/
 phenotype_ontology/build/*
+*.jar
