@@ -11,3 +11,5 @@ include ':bio-source-wormbase-gff'
 project(':bio-source-wormbase-gff').projectDir = new File(settingsDir, './wormbase-gff')
 include ':bio-source-worm-development-ontology'
 project(':bio-source-worm-development-ontology').projectDir = new File(settingsDir, './worm-development-ontology')
+include ':bio-source-PhenotypeOntology'
+project(':bio-source-PhenotypeOntology').projectDir = new File(settingsDir, './PhenotypeOntology')

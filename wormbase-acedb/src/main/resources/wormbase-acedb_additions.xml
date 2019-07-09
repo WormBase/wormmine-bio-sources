@@ -16,14 +16,14 @@
 		<attribute name="biotype" type="java.lang.String"/>
 		<reference name="referenceAllele" referenced-type="Allele" />
 		<collection name="strains" referenced-type="Strain" reverse-reference="genes"/>
-		<collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="gene"/>
+		<collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="genes"/>
 		<collection name="expressionClusters" referenced-type="ExpressionCluster" reverse-reference="genes"/>
 		<collection name="regulatesExprCluster" referenced-type="ExpressionCluster" reverse-reference="regulatedByGene"/>
 		<collection name="affectedByAlleles" referenced-type="Allele" reverse-reference="affectsGenes" />
 		<collection name="RNAiResult" referenced-type="RNAi" reverse-reference="inhibitsGene"/>
 		<collection name="geneClass"  referenced-type="GeneClass" reverse-reference="genes"/>
 		<collection name="formerGeneClass"  referenced-type="GeneClass" reverse-reference="formerGenes"/> -->
-		<collection name="variations" referenced-type="Allele" reverse-reference="genes" />
+		<collection name="allele" referenced-type="Allele" reverse-reference="genes" />
 	</class>
 
     <class name="Transcript" is-interface="true">
@@ -93,7 +93,7 @@
 	  <!--<collection name="strains" referenced-type="Strain" reverse-reference="variations" /> -->
 	  <collection name="fromLabs" referenced-type="Laboratory" reverse-reference="variations" />
 	  <collection name="geneClass" referenced-type="GeneClass" reverse-reference="variations" />
-	  <collection name="genes" referenced-type="Gene" reverse-reference="variations" />
+	  <collection name="genes" referenced-type="Gene" reverse-reference="allele" />
 	</class>
 
 	<class name="Phenotype" extends="OntologyTerm" is-interface="true">
@@ -141,7 +141,7 @@
 		<attribute name="pattern" type="java.lang.String"/>
 		<attribute name="remark" type="java.lang.String"/>
 		<attribute name="reporterGene" type="java.lang.String"/>
-		<reference name="gene" referenced-type="Gene" reverse-reference="expressionPatterns" /> 
+		<reference name="genes" referenced-type="Gene" reverse-reference="expressionPatterns" /> 
 		<!--<collection name="GOTerms" referenced-type="GOTerm" />-->
 		<collection name="GOTerms" referenced-type="OntologyTerm" />
 		<collection name="anatomyTerms" referenced-type="AnatomyTerm" reverse-reference="expressionPatterns"/>
