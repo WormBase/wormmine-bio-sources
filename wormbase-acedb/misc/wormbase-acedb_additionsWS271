@@ -141,7 +141,7 @@
 		<attribute name="pattern" type="java.lang.String"/>
 		<attribute name="remark" type="java.lang.String"/>
 		<attribute name="reporterGene" type="java.lang.String"/>
-		<collection name="genes" referenced-type="Gene" reverse-reference="expressionPatterns" /> 
+		<reference name="genes" referenced-type="Gene" reverse-reference="expressionPatterns" /> 
 		<!--<collection name="GOTerms" referenced-type="GOTerm" />-->
 		<collection name="GOTerms" referenced-type="OntologyTerm" />
 		<collection name="anatomyTerms" referenced-type="AnatomyTerm" reverse-reference="expressionPatterns"/>
@@ -201,7 +201,7 @@
 
 	<class name="RNAi" extends="BioEntity" is-interface="true">
 		<attribute name="DNA" type="java.lang.String"/>
-		<!--<attribute name="uniquelyMapped" type="java.lang.String"/>-->
+		<attribute name="uniquelyMapped" type="java.lang.String"/>
 		<attribute name="remark" type="java.lang.String"/>
 		<attribute name="method" type="java.lang.String"/>
 		<attribute name="genotype" type="java.lang.String"/>
