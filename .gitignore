@@ -948,3 +948,6 @@ jar
 phenotype_ontology/build/**
 *.jar
 worm-development-ontology/build/**
+
+worm-development-ontology/build/*
+*/build/**
