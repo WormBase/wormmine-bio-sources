@@ -11,20 +11,19 @@
       <collection name="transcripts" referenced-type="Transcript" reverse-reference="exons"/>
       </class>-->
 
-	<class name="Gene" extends="BioEntity" is-interface="true">
+	<class name="Gene" is-interface="true">
 		<attribute name="operon" type="java.lang.String"/>
 		<attribute name="biotype" type="java.lang.String"/>
 		<reference name="referenceAllele" referenced-type="Allele" />
 		<collection name="strains" referenced-type="Strain" reverse-reference="genes"/>
-		<collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="genes"/>
+		<collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="gene"/>
 		<collection name="expressionClusters" referenced-type="ExpressionCluster" reverse-reference="genes"/>
 		<collection name="regulatesExprCluster" referenced-type="ExpressionCluster" reverse-reference="regulatedByGene"/>
 		<collection name="affectedByAlleles" referenced-type="Allele" reverse-reference="affectsGenes" />
 		<collection name="RNAiResult" referenced-type="RNAi" reverse-reference="inhibitsGene"/>
 		<collection name="geneClass"  referenced-type="GeneClass" reverse-reference="genes"/>
 		<collection name="formerGeneClass"  referenced-type="GeneClass" reverse-reference="formerGenes"/> -->
-		<collection name="allele" referenced-type="Allele" reverse-reference="gene" />
-		<collection name="interaction" referenced-type="Interaction" reverse-reference="overlapping_gene" />
+		<collection name="allele" referenced-type="Allele" reverse-reference="genes" />
 	</class>
 
     <class name="Transcript" is-interface="true">
@@ -54,7 +53,7 @@
 		<collection name="proteins" referenced-type="Protein" reverse-reference="motifs"/>
 	</class>
 
-	<class name="Allele" extends="BioEntity" is-interface="true">
+	<class name="Allele" is-interface="true">
 	  <attribute name="naturalVariant" type="java.lang.String" />
 	  <attribute name="method" type="java.lang.String" />
 	  <attribute name="type" type="java.lang.String" />
@@ -91,10 +90,10 @@
 	  <collection name="affectsGenes" referenced-type="Gene" reverse-reference="affectedByAlleles" />
 	  <collection name="affectsCDSs" referenced-type="CDS" reverse-reference="affectedByAlleles" />
 	  <collection name="affectsTranscripts" referenced-type="Transcript" reverse-reference="affectedByAlleles" /> 
-	  <collection name="strains" referenced-type="Strain" reverse-reference="alleles" />
+	  <!--<collection name="strains" referenced-type="Strain" reverse-reference="variations" /> -->
 	  <collection name="fromLabs" referenced-type="Laboratory" reverse-reference="variations" />
 	  <collection name="geneClass" referenced-type="GeneClass" reverse-reference="variations" />
-	  <collection name="gene" referenced-type="Gene" reverse-reference="allele" />
+	  <collection name="genes" referenced-type="Gene" reverse-reference="allele" />
 	</class>
 
 	<class name="Phenotype" extends="OntologyTerm" is-interface="true">
@@ -142,7 +141,7 @@
 		<attribute name="pattern" type="java.lang.String"/>
 		<attribute name="remark" type="java.lang.String"/>
 		<attribute name="reporterGene" type="java.lang.String"/>
-		<collection name="genes" referenced-type="Gene" reverse-reference="expressionPatterns" /> 
+		<reference name="gene" referenced-type="Gene" reverse-reference="expressionPatterns" /> 
 		<!--<collection name="GOTerms" referenced-type="GOTerm" />-->
 		<collection name="GOTerms" referenced-type="OntologyTerm" />
 		<collection name="anatomyTerms" referenced-type="AnatomyTerm" reverse-reference="expressionPatterns"/>
@@ -175,6 +174,11 @@
 		<collection name="processes" referenced-type="Process" reverse-reference="expressionClusters"/>
 	</class>
 
+	<class name="Molecule" is-interface="true">
+		<attribute name="primaryIdentifier" type="java.lang.String"/>
+		<collection name="regulatesExprCluster" referenced-type="ExpressionCluster" reverse-reference="regulatedByMolecule"/>
+	</class>
+
 	<class name="Process" is-interface="true">
 		<attribute name="primaryIdentifier" type="java.lang.String"/>
 		<collection name="expressionClusters" referenced-type="ExpressionCluster" reverse-reference="processes"/>
@@ -197,7 +201,7 @@
 
 	<class name="RNAi" extends="BioEntity" is-interface="true">
 		<attribute name="DNA" type="java.lang.String"/>
-		<!--<attribute name="uniquelyMapped" type="java.lang.String"/>-->
+		<attribute name="uniquelyMapped" type="java.lang.String"/>
 		<attribute name="remark" type="java.lang.String"/>
 		<attribute name="method" type="java.lang.String"/>
 		<attribute name="genotype" type="java.lang.String"/>
@@ -217,8 +221,7 @@
 	</class>
 
     <class name="Strain"  extends="BioEntity" is-interface="true">
-		<attribute name="name" type="java.lang.String"/>
-        	<attribute name="primaryIdentifier" type="java.lang.String"/>
+        <attribute name="primaryIdentifier" type="java.lang.String"/>
 		<attribute name="genotype" type="java.lang.String"/>
 		<attribute name="otherName" type="java.lang.String"/>
 		<attribute name="inbreedingState" type="java.lang.String"/>
@@ -233,43 +236,8 @@
 		<attribute name="species" type="java.lang.String"/>
 		<attribute name="ncbiTaxonomyID" type="java.lang.String"/>
 		<collection name="genes" referenced-type="Gene" reverse-reference="strains"/> 
-        	<collection name="alleles" referenced-type="Allele" reverse-reference="strains" />
+        	<!-- <collection name="variations" referenced-type="Allele" reverse-reference="strains" /> -->
     </class>
-
-    <class name="Molecule" is-interface="true">
-	<attribute name="name" type="java.lang.String" />
-	<attribute name="primaryIdentifier" type="java.lang.String" />
-	<collection name="regulatesExprCluster" referenced-type="ExpressionCluster" reverse-reference="regulatedByMolecule" />
-    </class>
-
-    <class name="Interaction" is-interface="true">
-        <attribute name="primaryIdentifier" type="java.lang.String"/>
-        <collection name="overlapping_gene" referenced-type="Gene" reverse-reference="interaction" />
-    </class>
-
-    <class name="Transgene" is-interface="true">
-        <attribute name="primaryIdentifier" type="java.lang.String"/>
-        <attribute name="name" type="java.lang.String"  />
-    </class>
-
-    <class name="Construct" is-interface="true">
-        <attribute name="primaryIdentifier" type="java.lang.String"/>
-    </class>
-
-    <class name="Disease_model_annotation" is-interface="true">
-        <attribute name="primaryIdentifier" type="java.lang.String"/>
-    </class>
-
-    <class name="SO_term" is-interface="true">
-        <attribute name="primaryIdentifier" type="java.lang.String"/>
-        <attribute name="name" type="java.lang.String"  />
-    </class>
-
-    <class name="WBProcess" is-interface="true">
-        <attribute name="primaryIdentifier" type="java.lang.String"/>
-        <attribute name="name" type="java.lang.String"  />
-    </class>
-
 
 
 </classes>
