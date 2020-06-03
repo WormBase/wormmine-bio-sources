@@ -260,4 +260,10 @@
         <attribute name="primaryIdentifier" type="java.lang.String"/>
     </class>
 
+    <class name="SO_term" is-interface="true">
+        <attribute name="primaryIdentifier" type="java.lang.String"/>
+        <attribute name="name" type="java.lang.String"  />
+    </class>
+
+
 </classes>
