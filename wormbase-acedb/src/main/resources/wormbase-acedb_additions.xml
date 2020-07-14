@@ -168,7 +168,7 @@
 		<attribute name="algorithm" type="java.lang.String"/>
 		<attribute name="regulatedByTreatment" type="java.lang.String"/>
 		<collection name="regulatedByGene" referenced-type="Gene" reverse-reference="regulatesExprCluster"/>
-		<collection name="regulatedByMolecule" referenced-type="Molecule" reverse-reference="regulatesExprCluster"/>
+		<collection name="regulatedByMolecule" referenced-type="Molecule" />
 		<collection name="genes" referenced-type="Gene" reverse-reference="expressionClusters"/> 
 		<collection name="lifeStages" referenced-type="LifeStage" reverse-reference="expressionClusters"/>
 		<collection name="anatomyTerms" referenced-type="AnatomyTerm" reverse-reference="expressionClusters"/>
@@ -239,7 +239,7 @@
     <class name="Molecule" is-interface="true">
 	<attribute name="name" type="java.lang.String" />
 	<attribute name="primaryIdentifier" type="java.lang.String" />
-	<collection name="regulatesExprCluster" referenced-type="ExpressionCluster" reverse-reference="regulatedByMolecule" />
+	<!-- <collection name="regulatesExprCluster" referenced-type="ExpressionCluster" reverse-reference="regulatedByMolecule" /> -->
     </class>
 
     <class name="Interaction" is-interface="true">
