@@ -25,6 +25,7 @@
 		<collection name="formerGeneClass"  referenced-type="GeneClass" reverse-reference="formerGenes"/> -->
 		<collection name="allele" referenced-type="Allele" reverse-reference="gene" />
 		<collection name="interaction" referenced-type="Interaction" reverse-reference="overlapping_gene" />
+		<collection name="diseaseRelevantGene" referenced-type="Disease_model_annotation" />
 	</class>
 
     <class name="Transcript" is-interface="true">
@@ -258,7 +259,15 @@
 
     <class name="Disease_model_annotation" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
+        <attribute name="diseaseTerm" type="java.lang.String"/>
+        <attribute name="diseaseSpecies" type="java.lang.String" />
+   
     </class>
+
+
+
+
+
 
     <class name="SO_term" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
