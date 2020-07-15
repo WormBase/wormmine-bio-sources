@@ -257,7 +257,7 @@
         <attribute name="primaryIdentifier" type="java.lang.String"/>
     </class>
 
-    <class name="Disease_model_annotation" is-interface="true">
+    <class name="DiseaseModelAnnotation" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
         <attribute name="diseaseTerm" type="java.lang.String"/>
         <attribute name="diseaseSpecies" type="java.lang.String" />
