@@ -25,7 +25,7 @@
 		<collection name="formerGeneClass"  referenced-type="GeneClass" reverse-reference="formerGenes"/> -->
 		<collection name="allele" referenced-type="Allele" reverse-reference="gene" />
 		<collection name="interaction" referenced-type="Interaction" reverse-reference="overlapping_gene" />
-		<collection name="diseaseRelevantGene" referenced-type="DiseaseModelAnnotation" />
+		<!-- <collection name="diseaseRelevantGene" referenced-type="DiseaseModelAnnotation" /> -->
 	</class>
 
     <class name="Transcript" is-interface="true">
