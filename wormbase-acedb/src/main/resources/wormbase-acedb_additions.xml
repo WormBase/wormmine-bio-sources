@@ -14,6 +14,7 @@
 	<class name="Gene" extends="BioEntity" is-interface="true">
 		<attribute name="operon" type="java.lang.String"/>
 		<attribute name="biotype" type="java.lang.String"/>
+		<attribute name="automatedDescription" type="java.lang.String" />
 		<reference name="referenceAllele" referenced-type="Allele" />
 		<collection name="strains" referenced-type="Strain" reverse-reference="genes"/>
 		<collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="genes"/>
