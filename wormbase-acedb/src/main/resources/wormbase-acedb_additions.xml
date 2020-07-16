@@ -265,10 +265,10 @@
    
     </class>
 
-<!--     <class name="SO_term" is-interface="true">
+    <class name="SOterm" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
         <attribute name="name" type="java.lang.String"  />
-    </class> -->
+    </class>
 
     <class name="WBProcess" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
