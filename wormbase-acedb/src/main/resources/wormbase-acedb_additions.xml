@@ -71,11 +71,8 @@
 	  <attribute name="donorSpliceSite" type="java.lang.String" />
 	  <attribute name="acceptorSpliceSite" type="java.lang.String" />
 	  <attribute name="productionMethod" type="java.lang.String" /> 
-<!-- 	  <attribute name="sequenceDetails" type="java.lang.String" /> -->
-          <attribute name="status" type="java.lang.String" /> 
-<!--	  <attribute name="affects" type="java.lang.String" /> -->
-          <attribute name="NemaGENETAGConsortiumAllele" type="java.lang.String" />
-<!--	  <attribute name="missense" type="java.lang.String" /> -->
+      <attribute name="status" type="java.lang.String" /> 
+      <attribute name="NemaGENETAGConsortiumAllele" type="java.lang.String" />
 	  <attribute name="detectionMethod" type="java.lang.String" />
 	  <attribute name="positiveClone" type="java.lang.String" />
 	  <attribute name="typeOfMutation" type="java.lang.String" />
@@ -86,10 +83,10 @@
 	  <attribute name="natureOfVariation" type="java.lang.String" />
 	  <attribute name="interpolatedMapPosition" type="java.lang.String" />
 	  <attribute name="species" type="java.lang.String" />
-          <attribute name="rearrangement" type="java.lang.String" />
+      <attribute name="rearrangement" type="java.lang.String" />
 	  <attribute name="linkedTo" type="java.lang.String" />
-          <collection name="phenotype" referenced-type="Phenotype" reverse-reference="phenotypeAllele" />
-          <collection name="phenotypeNotObserved" referenced-type="Phenotype" reverse-reference="phenotypeAlleleNotObserved" /> 
+      <collection name="phenotype" referenced-type="Phenotype" reverse-reference="phenotypeAllele" />
+      <collection name="phenotypeNotObserved" referenced-type="Phenotype" reverse-reference="phenotypeAlleleNotObserved" /> 
 	  <collection name="affectsGenes" referenced-type="Gene" reverse-reference="affectedByAlleles" />
 	  <collection name="affectsCDSs" referenced-type="CDS" reverse-reference="affectedByAlleles" />
 	  <collection name="affectsTranscripts" referenced-type="Transcript" reverse-reference="affectedByAlleles" /> 
@@ -266,8 +263,15 @@
     </class>
 
     <class name="SOterm" is-interface="true">
+    	<attribute name="name" type="java.lang.String"  />
         <attribute name="identifier" type="java.lang.String"/>
-        <attribute name="name" type="java.lang.String"  />
+        <attribute name="definition" type="java.lang.String" />
+		<attribute name="synonym" type="java.lang.String" />
+		<attribute name="locatedSequence" type="java.lang.String" />
+<!-- 
+parent = /SO_term/Parent/Is_a/SO_term/text()
+child = /SO_term/Child/Is//SO_term[1]/text()
+ancestor = /SO_term/Ancestor//SO_term[1]/text() -->
     </class>
 
     <class name="WBProcess" is-interface="true">
