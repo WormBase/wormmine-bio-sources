@@ -266,7 +266,7 @@
         <attribute name="name" type="java.lang.String"  />
         <attribute name="identifier" type="java.lang.String"/>
         <attribute name="definition" type="java.lang.String" />
-        <collection name="synonym" />
+        <collection name="synonym" reference="SOterm" />
         <attribute name="locatedSequence" type="java.lang.String" />
 <!-- 
 parent = /SO_term/Parent/Is_a/SO_term/text()
