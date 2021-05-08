@@ -15,6 +15,10 @@
         <attribute name="operon" type="java.lang.String"/>
         <attribute name="biotype" type="java.lang.String"/>
         <attribute name="automatedDescription" type="java.lang.String" />
+        <!--<attribute name="map" type="java.lang.String" />
+        #<attribute name="mapPosition" type="java.lang.String" />
+        <attribute name="mapError" type="java.lang.String" /> -->
+        <attribute name="mapping" type="java.lang.String" />
         <reference name="referenceAllele" referenced-type="Allele" />
         <collection name="strains" referenced-type="Strain" reverse-reference="genes"/>
         <collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="genes"/>
@@ -26,7 +30,7 @@
         <collection name="formerGeneClass"  referenced-type="GeneClass" reverse-reference="formerGenes"/> -->
         <collection name="allele" referenced-type="Allele" reverse-reference="gene" />
         <collection name="interaction" referenced-type="Interaction" reverse-reference="overlapping_gene" />
-	<collection name="sotermname" referenced-type="SOterm"  />
+	<!-- <attribute name="soterm" type="java.lang.String" /> -->
         <!-- <collection name="diseaseRelevantGene" referenced-type="DiseaseModelAnnotation" /> -->
     </class>
 
@@ -239,14 +243,13 @@
     <class name="Molecule" is-interface="true">
     <attribute name="name" type="java.lang.String" />
     <attribute name="primaryIdentifier" type="java.lang.String" />
-    <!-- <collection name="regulatesExprCluster" referenced-type="ExpressionCluster" reverse-reference="regulatedByMolecule" /> -->
     </class>
 
     <class name="Interaction" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
         <collection name="overlapping_gene" referenced-type="Gene" reverse-reference="interaction" />
     </class>
-
+<!--
     <class name="Transgene" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
         <attribute name="name" type="java.lang.String"  />
@@ -262,19 +265,19 @@
         <attribute name="diseaseSpecies" type="java.lang.String" />
     </class>
 
-    <class name="SOterm" extends="OntologyTerm" is-interface="true">
-        <attribute name="name" type="java.lang.String"  />
+    <class name="SOterm" is-interface="true">
+        <attribute name="wbname" type="java.lang.String"  />
         <attribute name="identifier" type="java.lang.String"/>
         <attribute name="definition" type="java.lang.String" />
         <attribute name="locatedSequence" type="java.lang.String" />
         <collection name="synonym" referenced-type="SOterm" />
-<!--	<collection name="parent" reference="SOterm" />
-	<collection name="child" reference="SOterm" /> -->
-    </class>
+	<collection name="parent" reference="SOterm" />
+	<collection name="child" reference="SOterm" /> 
+    </class> -->
 
-    <class name="WBProcess" is-interface="true">
+<!--    <class name="WBProcess" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
         <attribute name="name" type="java.lang.String"  />
     </class>
-
+-->
 </classes>
