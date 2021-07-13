@@ -18,7 +18,7 @@
         <!--<attribute name="map" type="java.lang.String" />
         #<attribute name="mapPosition" type="java.lang.String" />
         <attribute name="mapError" type="java.lang.String" /> -->
-        <attribute name="mapping" type="java.lang.String" />
+        <attribute name="geneticPosition" type="java.lang.String" />
         <reference name="referenceAllele" referenced-type="Allele" />
         <collection name="strains" referenced-type="Strain" reverse-reference="genes"/>
         <collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="genes"/>
