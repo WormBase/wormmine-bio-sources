@@ -29,7 +29,7 @@
         <collection name="geneClass"  referenced-type="GeneClass" reverse-reference="genes"/>
         <collection name="formerGeneClass"  referenced-type="GeneClass" reverse-reference="formerGenes"/> -->
         <collection name="allele" referenced-type="Allele" reverse-reference="gene" />
-        <collection name="interaction" referenced-type="Interaction" reverse-reference="overlapping_gene" />
+        <!-- <collection name="interaction" referenced-type="Interaction" reverse-reference="overlapping_gene" /> -->
 	<!-- <attribute name="soterm" type="java.lang.String" /> -->
         <!-- <collection name="diseaseRelevantGene" referenced-type="DiseaseModelAnnotation" /> -->
     </class>
@@ -237,7 +237,7 @@
         <attribute name="species" type="java.lang.String"/>
         <attribute name="ncbiTaxonomyID" type="java.lang.String"/>
         <collection name="genes" referenced-type="Gene" reverse-reference="strains"/> 
-            <collection name="alleles" referenced-type="Allele" reverse-reference="strains" />
+        <collection name="alleles" referenced-type="Allele" reverse-reference="strains" />
     </class>
 
     <class name="Molecule" is-interface="true">
@@ -245,10 +245,13 @@
     <attribute name="primaryIdentifier" type="java.lang.String" />
     </class>
 
+
+<!--
     <class name="Interaction" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
         <collection name="overlapping_gene" referenced-type="Gene" reverse-reference="interaction" />
     </class>
+-->
 <!--
     <class name="Transgene" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
@@ -264,17 +267,16 @@
         <attribute name="diseaseTerm" type="java.lang.String"/>
         <attribute name="diseaseSpecies" type="java.lang.String" />
     </class>
-
-    <class name="SOterm" is-interface="true">
+-->
+<!--    <class name="WBSOterm" is-interface="true">
         <attribute name="wbname" type="java.lang.String"  />
         <attribute name="identifier" type="java.lang.String"/>
         <attribute name="definition" type="java.lang.String" />
-        <attribute name="locatedSequence" type="java.lang.String" />
-        <collection name="synonym" referenced-type="SOterm" />
-	<collection name="parent" reference="SOterm" />
-	<collection name="child" reference="SOterm" /> 
-    </class> -->
-
+        <collection name="synonym" referenced-type="WBSOterm" />
+	<collection name="parent" referenced-type="WBSOterm" />
+	<collection name="child" referenced-type="WBSOterm" /> 
+    </class>
+-->
 <!--    <class name="WBProcess" is-interface="true">
         <attribute name="primaryIdentifier" type="java.lang.String"/>
         <attribute name="name" type="java.lang.String"  />
