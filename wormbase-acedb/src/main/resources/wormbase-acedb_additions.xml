@@ -19,7 +19,6 @@
         <attribute name="mapPosition" type="java.lang.String" />
         <attribute name="mapError" type="java.lang.String" /> -->
         <attribute name="geneticPosition" type="java.lang.String" />
-        <attribute name="operon" type="java.lang.String" />
         <reference name="referenceAllele" referenced-type="Allele" />
         <collection name="strains" referenced-type="Strain" reverse-reference="genes"/>
         <collection name="expressionPatterns" referenced-type="ExpressionPattern" reverse-reference="genes"/>
@@ -35,10 +34,18 @@
         <!-- <collection name="diseaseRelevantGene" referenced-type="DiseaseModelAnnotation" /> -->
     </class>
 
+    <class name="Operon" extends="BioEntity" is-interface="true">
+       <attribute name="primaryIdentifier" type="java.lang.String"/>
+       <attribute name="description" type="java.lang.String" />
+       <attribute name="method" type="java.lang.String" />
+    </class>
+
+
+
     <class name="Transcript" is-interface="true">
         <attribute name="method" type="java.lang.String"/>
-    <collection name="affectedByAlleles" referenced-type="Allele" reverse-reference="affectsTranscripts" />
-    <collection name="RNAis" referenced-type="RNAi" reverse-reference="inhibitsTranscript"/>
+        <collection name="affectedByAlleles" referenced-type="Allele" reverse-reference="affectsTranscripts" />
+        <collection name="RNAis" referenced-type="RNAi" reverse-reference="inhibitsTranscript"/>
     </class>
 
     <class name="CDS" is-interface="true">
@@ -249,7 +256,8 @@
 
 <!--
     <class name="Interaction" is-interface="true">
-        <attribute name="primaryIdentifier" type="java.lang.String"/>
+        <attribute name="
+primaryIdentifier" type="java.lang.String"/>
         <collection name="overlapping_gene" referenced-type="Gene" reverse-reference="interaction" />
     </class>
 -->
