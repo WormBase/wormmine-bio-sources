@@ -51,8 +51,5 @@ public class MyBufferedReader extends BufferedReader {
 	public boolean isStreamClosed(){
 		return isStreamClosed;
 	}
-	
-	
-	// TODO REDEFINE OTHER SUPER METHODS TO THROW EXCEPTION
-	
+
 }

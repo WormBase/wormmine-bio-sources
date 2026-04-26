@@ -67,9 +67,8 @@ public class WormbaseAcedbConverter extends BioFileConverter
 	private String keyFilePath = null;
 
 	// Overridden by setDataSet()
-	private static final String DATASET_TITLE = "WormBaseAcedbConverter"; //"Add DataSet.title here";
-    private static final String DATA_SOURCE_NAME = "AceDB XML"; //"Add DataSource.name here";
-
+	private static final String DATASET_TITLE = "WormBaseAcedbConverter";
+	private static final String DATA_SOURCE_NAME = "AceDB XML";
     private WMDebug wmd;
     private DataMapper dataMapping = null;
     private Model model;
@@ -431,16 +430,9 @@ public class WormbaseAcedbConverter extends BioFileConverter
 //	        store(item);
 
         	setRefItem(currentClass, ID, item);
+        	}
 
-	        // TODO remove in final build
-//	        if(count == 100){
-//		        wmd.debug("STOP AFTER 100 RECORDS FOR TESTING");
-//		        break;
-//	        }
-    	}
-
-    	wmd.debug("==== Flushing cached reference items ====");
-    	// Store all items in storedRefItems
+        	wmd.debug("==== Flushing cached reference items ====");    	// Store all items in storedRefItems
     	Iterator<Entry<String, Item>> keySetIter =
     			storedRefItems.entrySet().iterator();
     	while(keySetIter.hasNext()){
@@ -660,15 +652,11 @@ public class WormbaseAcedbConverter extends BioFileConverter
 
     /**
      * Sets the dataset for this instance
-     * @param datasource
+     * @param dataSet
      */
-    // public void setDataSet(String dataSet){
-    // 	System.out.println("DataSet set to:"+dataSet); // DELETE
-    // 	String dataSourceRefID = getDataSource(DATA_SOURCE_NAME);
-    //     String dataSetRefID = getDataSet(dataSet, dataSourceRefID);
+    public void setDataSet(String dataSet) {
+        // This method is used to set the dataset title if needed
+        setDataSetTitle(dataSet);
+    }
 
-    // 	BioStoreHook hook = (BioStoreHook) this.storeHook;
-    // 	hook.setDataSet(dataSetRefID);
-    // } Paulo Nuin 2016
-
- }
+}
