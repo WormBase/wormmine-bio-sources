@@ -70,6 +70,15 @@
     </class>
 
     <class name="Allele" extends="BioEntity" is-interface="true">
+        <!-- WS298 fields mapped in variation_mapping.properties. vep*: worst-impact transcript.
+             Flanking sequences are on the strand WormBase curated them on, not always genomic +. -->
+        <attribute name="hgvsg" type="java.lang.String" />
+        <attribute name="vepConsequence" type="java.lang.String" />
+        <attribute name="vepImpact" type="java.lang.String" />
+        <attribute name="insertedSequence" type="java.lang.String" />
+        <attribute name="flankingSequenceLeft" type="java.lang.String" />
+        <attribute name="flankingSequenceRight" type="java.lang.String" />
+        <attribute name="transposonFamily" type="java.lang.String" />
         <attribute name="naturalVariant" type="java.lang.String" />
         <attribute name="method" type="java.lang.String" />
         <attribute name="type" type="java.lang.String" />
